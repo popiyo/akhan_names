@@ -1,3 +1,12 @@
 .right_align{
   text-align: right;
 }
+
+.start-tab{
+  padding-left: 20px;
+}
+
+.dark-table-header {
+  text-decoration-color: white;
+  background-color: darkgrey;
+}
