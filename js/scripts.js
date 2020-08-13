@@ -5,6 +5,12 @@ function prompt_user(message){
   return prompt(message);
 }
 
+function computeDayOfWeek(myCC,myYY,myMM,myDD){
+  return    ( ( (myCC/4)-2*myCC-1) + ((5*myYY/4)) + ((26*(myMM+1)/10)) + myDD ) % 7;
+}
+
+
+
 
 //ask user for all the inputs we need
 
@@ -13,6 +19,23 @@ var dayOfBirth;
 var monthofBirth;
 var yearOfBirth;
 var fullDateEntered;
+const nameWeekdayMapping = [
+  ["Kwasi","Akosua"],
+  ["Kwadwo","Adwoa"],
+  ["Kwabena","Abenaa"],
+  ["Kwaku","Akua"],
+  ["Yaw","Yaa"],
+  ["Kofi","Afua"],
+  ["Kwame","Ama"]
+];
+
+//element 0 is for Sunday,
+// element 0,0 is male name
+//element 0,1 is female name and so forth for the rest of the weeks
+//element 1 is Monday, 1,0 male, 1,1 female names
+
+
+alert (nameWeekdayMapping[0][0]);
 
 
 //prompt prompt_user
@@ -38,9 +61,8 @@ if ( validdayOfBirth &&   validmonthofBirth &&  validyearOfBirth) {
       //variables for calculating the days of the week
       var myCC; //- is the century digits. For example 1989 has CC = 19
       var myYY; //- is the Year digits (1989 has YY = 89)
-      var myMM; //-  is the Month
-      var myDD; //- is the Day of the month
       var scrapvar; //working variable
+      var dayOfWeek; //the week day we are looking for
 
       //extract CC
       scrapvar = yearOfBirth.toString();
@@ -49,18 +71,9 @@ if ( validdayOfBirth &&   validmonthofBirth &&  validyearOfBirth) {
       //capture the last two charactwrs
       myYY = parseInt (scrapvar[2] + scrapvar[3]);
 
-
-
-
-
-
-
-
-
-      //Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
-
-      //calculate the day of the week
-      //Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
+      dayOfWeek = computeDayOfWeek (myCC,myYY,monthofBirth,dayOfBirth);
+      dayOfWeek = parseInt(dayOfWeek.toFixed());
+      alert (dayOfWeek);
 
 }
 else {
