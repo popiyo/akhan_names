@@ -19,6 +19,7 @@ var dayOfBirth;
 var monthofBirth;
 var yearOfBirth;
 var fullDateEntered;
+var candidateEnglishName;
 const nameWeekdayMapping = [
   ["Kwasi","Akosua"],
   ["Kwadwo","Adwoa"],
@@ -35,14 +36,15 @@ const nameWeekdayMapping = [
 //element 1 is Monday, 1,0 male, 1,1 female names
 
 
-alert (nameWeekdayMapping[0][0]);
-
-
 //prompt prompt_user
+candidateEnglishName = prompt_user("Please enter your Surname: [max 20 characters]");
 
-dayOfBirth = prompt_user("Which DATE of the month were your Born [ 1 - 31 ]?");
-monthofBirth =  prompt_user("Which MONTH were you born [ 1 - 12 ]?");
-yearOfBirth = prompt_user("Which YEAR were you born? [ 1000 - 9999 ]");
+if (!candidateEnglishName) candidateEnglishName = "Candidate";
+if (candidateEnglishName.length >20) candidateEnglishName = candidateEnglishName.substr(0,20);
+
+dayOfBirth = prompt_user(candidateEnglishName + ", \nWhich DATE of the month were your Born [ 1 - 31 ]?\n");
+monthofBirth =  prompt_user(candidateEnglishName + ", \nWhich MONTH were you born [ 1 - 12 ]?\n");
+yearOfBirth = prompt_user(candidateEnglishName + ", \nWhich YEAR were you born? [ 1000 - 9999 ]\n");
 
 fullDateEntered = dayOfBirth + "/" + monthofBirth + "/" + yearOfBirth;
 
@@ -77,7 +79,7 @@ if ( validdayOfBirth &&   validmonthofBirth &&  validyearOfBirth) {
 
 }
 else {
-  alert("You have entered and Invalid date: " + fullDateEntered);
+  alert(candidateEnglishName + ", \nYou have entered and Invalid date: " + fullDateEntered + "\nExpected Output: DD/MM/YYYY \nExample: 23/4/2019");
 }
 
 
