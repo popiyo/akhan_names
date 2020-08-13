@@ -35,10 +35,58 @@ var validyearOfBirth =(yearOfBirth > 999) && (yearOfBirth < 10000);
 
 if ( validdayOfBirth &&   validmonthofBirth &&  validyearOfBirth) {
 
-      //this is not a valid date to work with
-      alert("GOOD: " + fullDateEntered);
+      //variables for calculating the days of the week
+      var myCC; //- is the century digits. For example 1989 has CC = 19
+      var myYY; //- is the Year digits (1989 has YY = 89)
+      var myMM; //-  is the Month
+      var myDD; //- is the Day of the month
+
+
+      myCC = yearOfBirth.toString();
+      //capture the first two charactwrs
+      myCC = parseInt (myCC[0] + myCC[1]);
+
+      alert(myCC*2);
+
+
+
+
+
+      //Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
+
+      //calculate the day of the week
+      //Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
 
 }
 else {
   alert("You have entered and Invalid date: " + fullDateEntered);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//end of file
