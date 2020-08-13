@@ -40,13 +40,18 @@ if ( validdayOfBirth &&   validmonthofBirth &&  validyearOfBirth) {
       var myYY; //- is the Year digits (1989 has YY = 89)
       var myMM; //-  is the Month
       var myDD; //- is the Day of the month
+      var scrapvar; //working variable
 
-
-      myCC = yearOfBirth.toString();
+      //extract CC
+      scrapvar = yearOfBirth.toString();
       //capture the first two charactwrs
-      myCC = parseInt (myCC[0] + myCC[1]);
+      myCC = parseInt (scrapvar[0] + scrapvar[1]);
+      //capture the last two charactwrs
+      myYY = parseInt (scrapvar[2] + scrapvar[3]);
 
-      alert(myCC*2);
+
+
+
 
 
 
