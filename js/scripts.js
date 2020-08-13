@@ -20,15 +20,18 @@ var monthofBirth;
 var yearOfBirth;
 var fullDateEntered;
 var candidateEnglishName;
+var gender; //0 male, 1 female so as to map correctly to the matrix below.
+var stringGender;
 const nameWeekdayMapping = [
-  ["Kwasi","Akosua"],
-  ["Kwadwo","Adwoa"],
-  ["Kwabena","Abenaa"],
-  ["Kwaku","Akua"],
-  ["Yaw","Yaa"],
-  ["Kofi","Afua"],
-  ["Kwame","Ama"]
+  ["Kwasi","Akosua","Sunday"],
+  ["Kwadwo","Adwoa", "Monday"],
+  ["Kwabena","Abenaa","Tuesday"],
+  ["Kwaku","Akua","Wednesday"],
+  ["Yaw","Yaa","Thursday"],
+  ["Kofi","Afua","Friday"],
+  ["Kwame","Ama","Saturday"]
 ];
+
 
 //element 0 is for Sunday,
 // element 0,0 is male name
@@ -37,14 +40,25 @@ const nameWeekdayMapping = [
 
 
 //prompt prompt_user
-candidateEnglishName = prompt_user("Please enter your Surname: [max 20 characters]");
+candidateEnglishName = prompt_user("Please enter your Surname: [max 20 characters]\n\n");
 
 if (!candidateEnglishName) candidateEnglishName = "Candidate";
 if (candidateEnglishName.length >20) candidateEnglishName = candidateEnglishName.substr(0,20);
 
-dayOfBirth = prompt_user(candidateEnglishName + ", \nWhich DATE of the month were your Born [ 1 - 31 ]?\n");
-monthofBirth =  prompt_user(candidateEnglishName + ", \nWhich MONTH were you born [ 1 - 12 ]?\n");
-yearOfBirth = prompt_user(candidateEnglishName + ", \nWhich YEAR were you born? [ 1000 - 9999 ]\n");
+dayOfBirth = prompt_user(candidateEnglishName + ",\n\nWhich DATE of the month were your Born [ 1 - 31 ]?\n\n");
+monthofBirth = prompt_user(candidateEnglishName + ",\n\nWhich MONTH were you born [ 1 - 12 ]?\n\n");
+yearOfBirth = prompt_user(candidateEnglishName + ",\n\nWhich YEAR were you born? [ 1000 - 9999 ]\n\n");
+gender = confirm("Please Press OK if you are FEMALE?");
+
+
+//set the gender parameters
+if(gender) {
+  gender = 1;
+  stringGender = "FEMALE";
+} else {
+  gender = 0;
+  stringGender = "MALE";
+}
 
 fullDateEntered = dayOfBirth + "/" + monthofBirth + "/" + yearOfBirth;
 
@@ -65,6 +79,8 @@ if ( validdayOfBirth &&   validmonthofBirth &&  validyearOfBirth) {
       var myYY; //- is the Year digits (1989 has YY = 89)
       var scrapvar; //working variable
       var dayOfWeek; //the week day we are looking for
+      var bioData;
+
 
       //extract CC
       scrapvar = yearOfBirth.toString();
@@ -75,11 +91,22 @@ if ( validdayOfBirth &&   validmonthofBirth &&  validyearOfBirth) {
 
       dayOfWeek = computeDayOfWeek (myCC,myYY,monthofBirth,dayOfBirth);
       dayOfWeek = parseInt(dayOfWeek.toFixed());
-      alert (dayOfWeek);
+
+
+
+      bioData = "\n\n Based on the data you have provided, we have come to the following Akon cultural deduction for you: " +
+                "\n\n Surname: " + candidateEnglishName +
+                "\n\n Gender: " + stringGender +
+                "\n\n Date of Birth: " + fullDateEntered +
+                "\n\n Day of Week Born: " + nameWeekdayMapping[dayOfWeek][2] +
+                "\n\n Akon Baptism Name:" + nameWeekdayMapping[dayOfWeek][gender] +
+                "\n\n THANK YOU FOR SHOWING INTEREST IN OUR AKON CULTURE!" ;
+
+      alert (bioData);
 
 }
 else {
-  alert(candidateEnglishName + ", \nYou have entered and Invalid date: " + fullDateEntered + "\nExpected Output: DD/MM/YYYY \nExample: 23/4/2019");
+  alert(candidateEnglishName + ", \n\nYou have entered and Invalid date: " + fullDateEntered + "\n\nExpected Output: DD/MM/YYYY \nExample: 23/4/2019\n\n");
 }
 
 
