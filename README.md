@@ -22,10 +22,11 @@ OBJECTIVES
 There are no known Bugs
 
 ## Link to Github pages
+https://popiyo.github.io/akhan_names/
 
 
 ## Technologies Used
-HTML, CSS
+HTML, CSS, JavaScript
 
 ## Support and contact details
 popiyo@slack
