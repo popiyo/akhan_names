@@ -2,6 +2,13 @@
   text-align: right;
 }
 
+.round_padding {
+  padding-top: 10px;
+  padding-bottom: 2px;
+  padding-right: 10px;
+  padding-left:5px;
+}
+
 .start-tab {
   padding-left: 20px;
 }
@@ -9,4 +16,8 @@
 .dark-table-header {
   text-decoration-color: white;
   background-color: darkgrey;
+}
+
+li {
+  border-style: outset;
 }

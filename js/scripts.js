@@ -48,7 +48,7 @@ if (candidateEnglishName.length >20) candidateEnglishName = candidateEnglishName
 dayOfBirth = prompt_user(candidateEnglishName + ",\n\nWhich DATE of the month were your Born [ 1 - 31 ]?\n\n");
 monthofBirth = prompt_user(candidateEnglishName + ",\n\nWhich MONTH were you born [ 1 - 12 ]?\n\n");
 yearOfBirth = prompt_user(candidateEnglishName + ",\n\nWhich YEAR were you born? [ 1000 - 9999 ]\n\n");
-gender = confirm("Please Press OK if you are FEMALE?");
+gender = confirm("Please Press OK if you are FEMALE....");
 
 
 //set the gender parameters
@@ -94,13 +94,12 @@ if ( validdayOfBirth &&   validmonthofBirth &&  validyearOfBirth) {
 
 
 
-      bioData = "\n\n Based on the data you have provided, we have come to the following Akon cultural deduction for you: " +
-                "\n\n Surname: " + candidateEnglishName +
-                "\n\n Gender: " + stringGender +
-                "\n\n Date of Birth: " + fullDateEntered +
-                "\n\n Day of Week Born: " + nameWeekdayMapping[dayOfWeek][2] +
-                "\n\n Akon Baptism Name:" + nameWeekdayMapping[dayOfWeek][gender] +
-                "\n\n THANK YOU FOR SHOWING INTEREST IN OUR AKON CULTURE!" ;
+      bioData = "Based on the data you have provided, we have come to the following Akon cultural deduction for you: " +
+                "\n\nSurname: " + candidateEnglishName + " - " + stringGender +
+                "\nDate of Birth: " + fullDateEntered +
+                "\nDay of Week Born: " + nameWeekdayMapping[dayOfWeek][2] +
+                "\n\nAkon Baptism Name: " + nameWeekdayMapping[dayOfWeek][gender] +
+                "\n\nTHANK YOU FOR SHOWING INTEREST IN OUR AKON CULTURE!" ;
 
       alert (bioData);
 
