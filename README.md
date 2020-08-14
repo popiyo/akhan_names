@@ -1,28 +1,34 @@
-# akhan_names
-BDD solution for determining a weekday of Birth and provide an appropriate Akhan male or female name
+# My Portfolio Website
+#### Created to showcase JavaScript 101 understanding 14.08.2020
+#### By Peter Opiyo  moringaschool
+## Description
+OBJECTIVES
 
-## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+    The project uses one or more javascript functions.
+    Appropriate control flows and logical operators are used in the project.
+    The project makes use of one or more arrays in javascript.
+    The project uses a  HTML input to collect user data.
+    The project uses a custom CSS stylesheet that incorporates cascading, box model and floats.
+    The project works as expected, achieving the functionality required.
+    The project demonstrates an understanding of the week's concepts. If requested, you should be able to explain your code to your instructor.
 
-```bash
-pip install foobar
-```
 
-## Usage
+## Setup/Installation Requirements
+* Fork the site to your file system
+* double click the index.html file and it will run of standard browser
 
-```python
-import foobar
+## Known Bugs
+There are no known Bugs
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
+## Link to Github pages
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+## Technologies Used
+HTML, CSS
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## Support and contact details
+popiyo@slack
+### License
+*GPL*
+Copyright (c) {2020} **Moringa School**
